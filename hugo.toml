@@ -1,21 +1,22 @@
-baseURL = 'https://jimojiedeng.github.io/' 
+baseURL = 'https://jimojiedeng.github.io/xg-blog/'
 languageCode = 'zh-cn'
-defaultContentLanguage = 'zh-cn'
-title = '小哥博客'
-theme = 'hugo-zen' 
+title = '小哥的博客'
 
-[params]
-  author = "你的名字"
-  description = "记录生活与思考"
+theme = 'hugo-zen'
+
+paginate = 10
 
 [[menu.main]]
-  identifier = "posts"
-  name = "文章"
-  url = "/posts/"
-  weight = 10
+    name = "首页"
+    url = "/"
+    weight = 1
 
 [[menu.main]]
-  identifier = "tags"
-  name = "标签"
-  url = "/tags/"
-  weight = 20
+    name = "归档"
+    url = "/archives/"
+    weight = 2
+
+[[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 3
