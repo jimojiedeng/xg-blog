@@ -1,7 +1,7 @@
-baseURL = 'https://username.github.io/' # 替换为你的 GitHub 用户名
+baseURL = 'https://jimojiedeng.github.io/' # 替换为你的 GitHub 用户名
 languageCode = 'zh-cn'
 defaultContentLanguage = 'zh-cn'
-title = '我的个人博客'
+title = '小哥博客'
 theme = 'hugo-zen' # 切换为 hugo-zen 主题
 
 [params]
