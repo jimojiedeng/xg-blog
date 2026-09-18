@@ -1,0 +1,21 @@
+baseURL = 'https://username.github.io/' # 替换为你的 GitHub 用户名
+languageCode = 'zh-cn'
+defaultContentLanguage = 'zh-cn'
+title = '我的个人博客'
+theme = 'hugo-zen' # 切换为 hugo-zen 主题
+
+[params]
+  author = "你的名字"
+  description = "记录生活与思考"
+
+[[menu.main]]
+  identifier = "posts"
+  name = "文章"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "tags"
+  name = "标签"
+  url = "/tags/"
+  weight = 20
