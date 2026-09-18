@@ -1,10 +1,16 @@
 baseURL = 'https://jimojiedeng.github.io/xg-blog/'
 languageCode = 'zh-cn'
-title = '小哥的博客'
+defaultContentLanguage = 'zh-cn'
+title = '小哥博客'
 
 theme = 'hugo-zen'
 
 paginate = 10
+
+[languages]
+  [languages.zh-cn]
+    languageName = '中文'
+    weight = 1
 
 [[menu.main]]
     name = "首页"
