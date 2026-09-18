@@ -1,0 +1,37 @@
+name: Deploy Hugo Site to GitHub Pages
+
+on:
+  push:
+    branches: [ main ] # 监听 main 主分支代码变动
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive # 自动拉取主题
+
+      - name: Setup Hugo
+        uses: plugins/hugo@v1
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build Hugo
+        run: hugo --minify
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
