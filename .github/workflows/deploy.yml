@@ -2,24 +2,29 @@ name: Deploy Hugo Site to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # 监听 main 主分支代码变动
+    branches: [ main ]
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive # 自动拉取主题
+          submodules: recursive
+          fetch-depth: 0
 
       - name: Setup Hugo
-        uses: plugins/hugo@v1
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
           extended: true
@@ -32,6 +37,13 @@ jobs:
         with:
           path: ./public
 
-      - name: Deploy
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
