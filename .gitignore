@@ -1,0 +1,4 @@
+# Hugo 编译生成的临时网页目录（交由 GitHub Actions 自动生成，源码库不需要）
+/public/
+/resources/_gen/
+.hugo_build.cookie
