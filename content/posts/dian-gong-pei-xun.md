@@ -1,7 +1,7 @@
 ---
 title: '电工培训'
 date: 2026-09-14 11:53:03
-tags: [#日常]
+tags: [日常]
 published: true
 hideInList: false
 feature: 
